@@ -12,33 +12,6 @@ services:
       - MYSQL_ROOT_PASSWORD=password
     networks:
       - apps
-  api:
-    depends_on:
-      - mysql
-    build: ./porto-be
-    container_name: api_c
-    env_file: ./porto-be/.env
-    ports:
-      - "8082:8082"
-    volumes:
-      - ./porto-be:/app
-    networks:
-      - apps
-  client:
-    depends_on:
-      - api
-    build: ./porto-fe
-    env_file: ./porto-fe/.env.development
-    container_name: client_c
-    ports:
-      - "5173:5173"
-    volumes:
-      - ./porto-fe:/app
-      - /app/node_modules
-    stdin_open: true
-    tty: true
-    networks:
-      - apps
 networks:
   apps:
     driver: "bridge"
