@@ -10,6 +10,7 @@ import TechStacks from "./components/TechStacks";
 import AdditionalTech from "./components/AdditionalTech";
 import AboutMe from "./components/AboutMe";
 import Footer from "./components/Footer";
+import AnimationWrapper from "./components/AnimationWrapper";
 
 function App() {
   const [menuIsOpen, setMenuIsOpen] = useState(false);
@@ -30,21 +31,31 @@ function App() {
 
       <div className="flex flex-col gap-64 px-5 lg:px-40 mt-20 pb-10">
         <section id="introduction">
-          <Hero />
+          <AnimationWrapper>
+            <Hero />
+          </AnimationWrapper>
         </section>
 
         <section id="projects">
-          <Projects />
+          <AnimationWrapper>
+            <Projects />
+          </AnimationWrapper>
         </section>
 
         <section id="technologies" className="flex flex-col gap-32">
-          <TechStacks />
+          <AnimationWrapper>
+            <TechStacks />
+          </AnimationWrapper>
 
-          <AdditionalTech />
+          <AnimationWrapper>
+            <AdditionalTech />
+          </AnimationWrapper>
         </section>
 
         <section id="about-me">
-          <AboutMe />
+          <AnimationWrapper>
+            <AboutMe />
+          </AnimationWrapper>
         </section>
 
         <Footer />
