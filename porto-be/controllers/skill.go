@@ -43,6 +43,16 @@ func (c *SkillController) FindAllSkills(ctx *gin.Context) {
 
 	var skillResponses []skillResponse.SkillResponse
 
+	if len(skills) == 0 {
+		webResponse := responses.Response{
+			Code:   http.StatusOK,
+			Status: "OK",
+			Data:   []skillResponse.SkillResponse{},
+		}
+		ctx.JSON(http.StatusOK, webResponse)
+		return
+	}
+
 	for _, skill := range skills {
 		response := convertSkillResponse(skill)
 

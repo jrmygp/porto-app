@@ -62,6 +62,16 @@ func (h *ProjectController) FindAllProjects(c *gin.Context) {
 
 	var projectResponses []projectResponse.ProjectResponse
 
+	if len(projects) == 0 {
+		webResponse := responses.Response{
+			Code:   http.StatusOK,
+			Status: "OK",
+			Data:   []projectResponse.ProjectResponse{},
+		}
+		c.JSON(http.StatusOK, webResponse)
+		return
+	}
+
 	for _, project := range projects {
 		response := convertProjectResponse(project)
 

@@ -73,7 +73,7 @@ function Projects() {
         keyBoardControl
         itemClass="p-[10px] pb-[40px]"
       >
-        {projects.length > 0 &&
+        {projects?.length > 0 &&
           projects.map((project) => {
             return (
               <ProjectCard

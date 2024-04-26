@@ -44,6 +44,16 @@ func (h *TechController) FindAllTechs(c *gin.Context) {
 
 	var techResponses []techResponse.TechResponse
 
+	if len(techs) == 0 {
+		webResponse := responses.Response{
+			Code:   http.StatusOK,
+			Status: "OK",
+			Data:   []techResponse.TechResponse{},
+		}
+		c.JSON(http.StatusOK, webResponse)
+		return
+	}
+
 	for _, tech := range techs {
 		response := convertTechResponse(tech)
 
