@@ -8,7 +8,7 @@ function ProjectCard({ title, description, url, image, stacks = [], onClick }) {
   const hostName = import.meta.env.VITE_PUBLIC_API;
 
   return (
-    <div className="h-[550px] shadow-[0px_0px_3px_0px_#fff] rounded-xl z-20 flex flex-col items-center gap-7 p-6 bg-primary">
+    <div className="h-[550px] border-2 border-gray-800 rounded-lg z-20 flex flex-col items-center gap-7 p-6 bg-primary">
       <img
         className="h-64 w-full object-contain rounded-xl bg-primary"
         src={`${hostName}/${image}`}

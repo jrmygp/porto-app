@@ -64,5 +64,5 @@ func main() {
 
 	fmt.Println("jeremy loves andre to the heart")
 
-	router.Run(":8082")
+	router.Run(":8080")
 }

@@ -98,7 +98,7 @@ function Projects() {
           modal: "rounded-xl",
         }}
       >
-        <h2 className="text-2xl text-primary m-0">{description}</h2>
+        <h2 className="text-2xl text-primary py-8 px-2">{description}</h2>
       </Modal>
     </div>
   );
